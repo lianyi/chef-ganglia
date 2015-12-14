@@ -1,7 +1,7 @@
 case node['platform']
 when "ubuntu", "debian"
   package "gmetad"
-when "redhat", "centos", "fedora"
+when "redhat", "centos", "fedora","amazon"
   case node['ganglia']['install_method']
   when 'package'
     include_recipe 'yum-epel'

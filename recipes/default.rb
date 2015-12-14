@@ -20,7 +20,7 @@
 case node['platform']
 when "ubuntu", "debian"
   package "ganglia-monitor"
-when "redhat", "centos", "fedora"
+when "redhat", "centos", "fedora","amazon"
   user "ganglia"
   case node['ganglia']['install_method']
   when 'package'

@@ -1,7 +1,7 @@
-default['ganglia']['version'] = "3.1.7"
+default['ganglia']['version'] = "3.7.2"
 #default['ganglia']['uri'] = "http://sourceforge.net/projects/ganglia/files/ganglia%20monitoring%20core/#{node['ganglia']['version']}/ganglia-#{node['ganglia']['version']}.tar.gz/download"
 default['ganglia']['uri'] = "http://downloads.sourceforge.net/project/ganglia/ganglia%20monitoring%20core/#{node['ganglia']['version']}/ganglia-#{node['ganglia']['version']}.tar.gz"
-default['ganglia']['checksum'] = "bb1a4953"
+default['ganglia']['checksum'] = "042dbcaf580a661b55ae4d9f9b3566230b2232169a0898e91a797a4c61888409"
 
 # For redhat, centos, fedora, install from source by default
 # if you set it to 'package' it will use EPEL

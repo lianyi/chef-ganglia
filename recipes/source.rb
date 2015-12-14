@@ -1,4 +1,4 @@
-if platform?( "redhat", "centos", "fedora" )
+if platform?( "redhat", "centos", "fedora","amazon" )
   package "apr-devel"
   package "libconfuse-devel"
   package "expat-devel"
@@ -26,7 +26,7 @@ end
 
 execute "build ganglia" do
   command "make"
-  creates "#{src_path}/gmond/gmond"
+  creates "#{src_path}/gmond"
   cwd src_path
 end
 
@@ -40,6 +40,6 @@ link "/usr/lib/ganglia" do
   to "/usr/lib64/ganglia"
   only_if do
     node['kernel']['machine'] == "x86_64" and
-      platform?( "redhat", "centos", "fedora" )
+      platform?( "redhat", "centos", "fedora","amazon" )
   end
 end

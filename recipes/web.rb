@@ -9,7 +9,7 @@ when "ubuntu", "debian"
     notifies :restart, "service[apache2]"
   end
 
-when "redhat", "centos", "fedora"
+when "redhat", "centos", "fedora","amazon"
   case node['ganglia']['install_method']
   when 'package'
     include_recipe 'yum-epel'
@@ -72,7 +72,7 @@ template "/etc/ganglia-webfrontend/conf.php" do
 end
 
 service "apache2" do
-  service_name "httpd" if platform?( "redhat", "centos", "fedora" )
+  service_name "httpd" if platform?( "redhat", "centos", "fedora","amazon" )
   supports :status => true, :restart => true, :reload => true
   action [ :enable, :start ]
 end
