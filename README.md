@@ -40,6 +40,13 @@ There should be one or more hosts running under the role indicated by `node['gan
 
 The aggregator recipe will install aggregator.py and run it every minute from cron. The aggregation recipe should be run on the same node as runs your gmond collectors. It will look for attributes set in other recipes indicating what metrics to aggregate and how to aggregate them. It will connect ot each of the collector gmond processes, get all the relevant metrics, aggregate them, and re-submit them to the same gmond under the pseudo-host "all_${clustername}".
 
+A run list with recipe[ganglia] enables monitoring.
+
+A run list with recipe[ganglia::web] enables the web interface.
+
+A run list with recipe[ganglia::graphite] enables graphite graphs.
+
+
 LWRP
 ====
 

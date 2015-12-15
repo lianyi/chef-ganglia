@@ -7,7 +7,7 @@ default['ganglia']['checksum'] = "042dbcaf580a661b55ae4d9f9b3566230b2232169a0898
 # if you set it to 'package' it will use EPEL
 # TODO: make install_method package by default?
 # TODO: install_method source should work on debian/ubuntu?
-default['ganglia']['install_method'] = 'source'
+default['ganglia']['install_method'] = 'package'
 
 default['ganglia']['grid_name'] = "default"
 default['ganglia']['unicast'] = false

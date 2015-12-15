@@ -37,7 +37,7 @@ end
 
 # if we should use rrdcached, set it up here.
 if node['ganglia']['enable_rrdcached'] == true
-  package "rrdcached" do
+  package "rrdtool" do
     action :install
   end
   include_recipe "runit"
