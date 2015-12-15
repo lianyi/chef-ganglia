@@ -5,13 +5,13 @@ action :enable do
   #python module
   if new_resource.github
     githuburl = "https://raw.githubusercontent.com/ganglia/gmond_python_modules/master/#{new_resource.module_name}/python_modules/#{new_resource.module_name}.py"
-    remote_file "/usr/lib/ganglia/python_modules/#{new_resource.module_name}.py" do
+    remote_file "/usr/lib64/ganglia/python_modules/#{new_resource.module_name}.py" do
       source githuburl
       mode 00644
       action :create_if_missing
     end
   else
-    template "/usr/lib/ganglia/python_modules/#{new_resource.module_name}.py" do
+    template "/usr/lib64/ganglia/python_modules/#{new_resource.module_name}.py" do
       source "ganglia/#{new_resource.module_name}.py.erb"
       owner "root"
       group "root"
@@ -35,7 +35,7 @@ end
 
 action :disable do
 
-  file "/usr/lib/ganglia/python_modules/#{new_resource.module_name}.py" do
+  file "/usr/lib64/ganglia/python_modules/#{new_resource.module_name}.py" do
     action :delete
     notifies :restart, "service[ganglia-monitor]"
   end
