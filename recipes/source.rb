@@ -32,8 +32,16 @@ end
 
 execute "install ganglia" do
   command "make install"
-  creates "/usr/sbin/gmond"
+  creates "/usr/local/sbin/gmond"
   cwd src_path
+end
+
+
+link "/usr/sbin/gmond" do
+  to "/usr/local/sbin/gmond"
+  only_if do
+     platform?("amazon" )
+  end
 end
 
 link "/usr/lib/ganglia" do
